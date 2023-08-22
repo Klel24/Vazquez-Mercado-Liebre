@@ -5,7 +5,7 @@ const app = express(); //asigno  la funcion express a una constante
 
 app.use(express.static(path.join(__dirname, "../public"))); //agrego la ruta absolutaa la carpeta publica
 
-const PORT = 3001; //asigno el puerto que voy a usar a una variable para luego usar siempre la variable
+const PORT = process.env.PORT || 3001; //asigno el puerto que voy a usar a una variable para luego usar siempre la variable
 
 app.listen(PORT, () =>{
     console.log ("Se prendió en el puerto " + PORT);  //prendo el servidor
